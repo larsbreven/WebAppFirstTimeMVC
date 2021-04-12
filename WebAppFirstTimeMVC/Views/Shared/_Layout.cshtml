@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link href="~/css/MyStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1>Logo</h1>
+        <nav>
+            <ul>
+                <li>
+                    @Html.ActionLink("Index", "Index","Home")
+                </li>
+                <li>
+                    @Html.ActionLink("About", "About", "Home")
+                </li>
+                <li>
+                    @*@Html.ActionLink("Multi Table", "Experiment", "Home")*@
+                    <a asp-action="Experiment" asp-controller="Home">Multi Table</a>
+                </li>
+                <li>
+                    <a asp-action="ContactUs" asp-controller="Home">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <footer>
+        <p>&copy;Lexicon</p>
+    </footer>
+</body>
+</html>

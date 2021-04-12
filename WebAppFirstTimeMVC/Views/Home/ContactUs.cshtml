@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "ContactUs";
+}
+
+<h1>ContactUs</h1>
+
+<form asp-action="ContactUs" asp-controller="Home" method="post">
+
+    <input type="text" value="" name="name" placeholder="Your name here" />
+    <input type="email" value="" name="email" placeholder="Your email here" />
+    <textarea name="message"></textarea>
+
+    <button type="submit">Send</button>
+</form>

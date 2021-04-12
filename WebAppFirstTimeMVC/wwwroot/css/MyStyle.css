@@ -1,0 +1,32 @@
+﻿body {
+    background-color: lightgray;
+}
+
+code {
+    background-color: black;
+    color: white;
+}
+
+#board {
+    background-color: darkgray;
+    height: 500px;
+    width: 500px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.box {
+    float: left;
+    height: 50px;
+    width: 50px;
+}
+
+.textMidCenter {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+}
+
+td {
+    border: 1px solid black;
+}
