@@ -26,6 +26,24 @@ namespace WebAppFirstTimeMVC.Controllers
             return View();
         }
 
+        public IActionResult AboutMe()
+        {
+            return View();
+        }
+
+        public IActionResult ContactMe()
+        {
+            return View();
+        }
+
+
+        public IActionResult Projects()
+        {
+            return View();
+        }
+
+
+
         [HttpGet]//only client get request can call this one
         public IActionResult ContactUs()
         {
