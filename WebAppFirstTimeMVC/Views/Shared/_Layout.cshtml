@@ -9,11 +9,10 @@
 </head>
 <body>
     <header>
-        <h1>Logo</h1>
+        <h1>My company</h1>
         <nav>
             <ul>
                 <li>
-                    <h4>Click here for company information</h4>
                     @Html.ActionLink("About us", "About", "Home")
                 </li>
                 <li>
@@ -43,8 +42,11 @@
 
 
     <footer>
-        <p> Date today is: DateTime </p>
-        <p>&copy;Rajtan-Tajtan Technology</p>
+        <p> The date today is: </p>
+        <p>@DateTime.Now.ToString("dd-MMM-yyyy")</p>
+        <br>
+        <br>
+        <p>&copy; Rajtan-Tajtan Technology</p>
     </footer>
 </body>
 </html>
