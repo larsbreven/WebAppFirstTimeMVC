@@ -16,6 +16,15 @@ namespace WebAppFirstTimeMVC
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(30);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+
             services.AddMvc();
             //services.AddControllersWithViews();
         }
@@ -33,18 +42,20 @@ namespace WebAppFirstTimeMVC
 
             app.UseRouting();
 
+            app.UseSession();
+
             app.UseEndpoints(endpoints =>
             {
-
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}"
+                name: "specialForContactList",
+                pattern: "Interest-list",
+                defaults: new { controller = "Home", action = "ContactList" }
                 );
 
-                //endpoints.MapGet("/", async context =>
-                //{
-                //    await context.Response.WriteAsync("Hello World!");
-                //});
+                endpoints.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}"
+                );
             });
         }
     }

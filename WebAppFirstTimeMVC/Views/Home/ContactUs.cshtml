@@ -1,9 +1,12 @@
 ﻿
-@{
-    ViewData["Title"] = "ContactUs";
-}
+@{ ViewData["Title"] = "ContactUs"; }
 
 <h1>ContactUs</h1>
+
+@if (ViewBag.Msg != null)
+{
+    <h4 style="color: red">Error: @ViewBag.Msg</h4>
+}
 
 <form asp-action="ContactUs" asp-controller="Home" method="post">
 
